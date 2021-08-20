@@ -69,6 +69,6 @@ class Player
 
     public function render(): string
     {
-        return 'áa';
+        return $this->attributes->weight;
     }
 }

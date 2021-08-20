@@ -1,12 +1,21 @@
-<?php 
+<?php
 
 namespace App\Career;
 
 class History
 {
+    /**
+     * @var array
+    */
     private $lines = [];
 
-    public function timeLine(Player $player, string $team, string $date)
+    /**
+     * @param App\Career\Player $player
+     * @param string $team
+     * @param string $date
+     * @return void
+    */
+    public function timeLine(Player $player, string $team, string $date): void
     {
         $this->lines[] = [
             'Player' => $player,
@@ -15,7 +24,10 @@ class History
         ];
     }
 
-    public function getTimeLine()
+    /**
+     * @return array
+    */
+    public function getTimeLine(): array
     {
         return $this->lines;
     }

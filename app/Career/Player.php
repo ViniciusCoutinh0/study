@@ -8,7 +8,7 @@ class Player
      * @var string
     */
     private $name;
-    
+
     /**
      * @var string
     */
@@ -18,12 +18,12 @@ class Player
      * @var string
     */
     private $nacionality;
-    
+
     /**
      * @var string
     */
     private $uniformName;
-    
+
     /**
      * @var int
     */
@@ -44,12 +44,19 @@ class Player
     */
     private $birthDay;
 
+    /**
+     * @var App\Career\Attribute
+    */
     private $attributes;
+
+    /**
+     * @var App\Career\State
+    */
     private $state;
 
     public function __get($name)
     {
-        $this->$name;
+        return ($this->$name ?? null);
     }
 
     public function __set($name, $value)
@@ -57,18 +64,29 @@ class Player
         $this->$name = $value;
     }
 
-    public function setAttributes(Attribute $attributes)
+    /**
+     * @param App\Career\Attribute $attributes
+     * @return void
+    */
+    public function setAttributes(Attribute $attributes): void
     {
         $this->attributes = $attributes;
     }
 
-    public function setState(State $state)
+    /**
+     * @param App\Career\State $state
+     * @return void
+    */
+    public function setState(State $state): void
     {
         $this->state = $state;
     }
 
-    public function render(): string
+    /**
+     * @return string
+    */
+    public function render()
     {
-        return $this->attributes->weight;
+        //
     }
 }

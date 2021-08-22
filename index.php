@@ -1,16 +1,12 @@
 <?php
 
-use App\SandBox\PlayerOne;
-
-require __DIR__ . '/vendor/autoload.php';
-
 use App\Career\Player;
-use App\Career\Attribute;
-use App\Career\State;
 use App\Career\History;
 
 try
 {
+    require __DIR__ . '/vendor/autoload.php';
+
     $player = new Player([
         "name"          => 'Vinicius',
         "lastname"      => 'Coutinho',
